@@ -1,8 +1,7 @@
 #
 # TODO:
 # - update desc and summary
-# - add/test build with server
-# - add icon and desktop file
+# - test build with server
 %bcond_with	server		# build with local server
 
 Summary:	hedgewars
