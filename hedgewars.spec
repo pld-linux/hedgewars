@@ -1,6 +1,12 @@
 #
 %bcond_without	server		# build without local server
 #
+
+# there is no ghc on ppc
+%ifarch ppc
+%undefine	with_server
+%endif
+
 Summary:	hedgewars - free Worms-like turn based strategy game
 Summary(hu.UTF-8):	hedgewars - ingyenes Worms-szerű körökre osztott stratégiai játék
 Summary(pl.UTF-8):	hedgewars - strategia czasu rzeczywistego podobna do Worms
