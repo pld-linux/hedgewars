@@ -5,7 +5,7 @@
 
 Summary:	hedgewars - free Worms-like turn based strategy game
 Summary(hu.UTF-8):	hedgewars - ingyenes Worms-szerű körökre osztott stratégiai játék
-#Summary(pl.UTF-8):
+Summary(pl.UTF-8):	hedgewars - strategia czasu rzeczywistego podobna do Worms
 Name:		hedgewars
 Version:	0.9.7
 Release:	0.5
@@ -35,7 +35,9 @@ Hedgewars is a free Worms-like turn based strategy game.
 %description -l hu.UTF-8
 Hedgewars egy ingyenes Worms-szerű körökre osztott stratégiai játék.
 
-#%description -l pl.UTF-8
+%description -l pl.UTF-8
+Hedgewars jest wolnodostępną strategią czasu rzeczywistego podobną do
+Worms.
 
 %prep
 %setup -q -n %{name}-src-%{version}
