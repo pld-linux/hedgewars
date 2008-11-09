@@ -1,14 +1,12 @@
 #
-# TODO:
-# - test build with server
-%bcond_with	server		# build with local server
-
+%bcond_without	server		# build without local server
+#
 Summary:	hedgewars - free Worms-like turn based strategy game
 Summary(hu.UTF-8):	hedgewars - ingyenes Worms-szerű körökre osztott stratégiai játék
 Summary(pl.UTF-8):	hedgewars - strategia czasu rzeczywistego podobna do Worms
 Name:		hedgewars
 Version:	0.9.7
-Release:	0.5
+Release:	1
 License:	GPL v2 + Public Domain fonts
 Group:		X11/Applications/Games
 Source0:	http://hedgewars.org/download/%{name}-src-%{version}.tar.bz2
@@ -26,6 +24,7 @@ BuildRequires:	cmake >= 2.4.4
 BuildRequires:	desktop-file-utils
 BuildRequires:	fpc >= 2.2.0
 %{?with_server:BuildRequires:	ghc}
+%{?with_server:BuildRequires:	gmp-devel}
 BuildRequires:	openssl-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -38,6 +37,17 @@ Hedgewars egy ingyenes Worms-szerű körökre osztott stratégiai játék.
 %description -l pl.UTF-8
 Hedgewars jest wolnodostępną strategią czasu rzeczywistego podobną do
 Worms.
+
+%package server
+Summary:	Network server for hedgewars
+Summary(pl.UTF-8):	Sieciowy serwer dla hedgewars
+Group:		X11/Applications/Games
+
+%description server
+Server for playing networked games of hedgewars.
+
+%description server -l pl.UTF-8
+Serwer do prowadzenia sieciowych gier hedgewars.
 
 %prep
 %setup -q -n %{name}-src-%{version}
@@ -73,3 +83,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/%{name}
 %{_pixmapsdir}/%{name}.png
 %{_desktopdir}/%{name}.desktop
+
+%if %{with server}
+%files server
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/hedgewars-server
+%endif
