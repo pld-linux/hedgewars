@@ -1,10 +1,10 @@
 #
 # TODO:
-# - update desc and summary
 # - test build with server
 %bcond_with	server		# build with local server
 
-Summary:	hedgewars
+Summary:	hedgewars - free Worms-like turn based strategy game
+Summary(hu.UTF-8):	hedgewars - ingyenes Worms-szerű körökre osztott stratégiai játék
 #Summary(pl.UTF-8):
 Name:		hedgewars
 Version:	0.9.7
@@ -30,7 +30,10 @@ BuildRequires:	openssl-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-hedgehogs.
+Hedgewars is a free Worms-like turn based strategy game.
+
+%description -l hu.UTF-8
+Hedgewars egy ingyenes Worms-szerű körökre osztott stratégiai játék.
 
 #%description -l pl.UTF-8
 
