@@ -6,4 +6,4 @@ Icon=hedgewars
 Terminal=false
 StartupNotify=false
 Type=Application
-Categories=Game;StrategyGame;
+Categories=Game;ArcadeGame;
