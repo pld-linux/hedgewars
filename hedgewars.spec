@@ -56,8 +56,8 @@ rm -rf $RPM_BUILD_ROOT
 
 install -d $RPM_BUILD_ROOT{%{_pixmapsdir},%{_desktopdir}}
 
-cd build
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} -C build install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_pixmapsdir}/%{name}.png
 install %{SOURCE2} $RPM_BUILD_ROOT%{_desktopdir}/%{name}.desktop
