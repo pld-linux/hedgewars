@@ -15,6 +15,7 @@ Source1:	%{name}.png
 Source2:	%{name}.desktop
 URL:		http://www.hedgewars.org/
 BuildRequires:	QtCore-devel >= 4.4.0
+BuildRequires:	QtNetwork-devel
 BuildRequires:	QtSvg-devel >= 4.4.0
 BuildRequires:	SDL_image-devel >= 1.2
 BuildRequires:	SDL_mixer-devel >= 1.2
