@@ -1,5 +1,8 @@
 #
-%bcond_without	server		# build without local server
+# TODO:
+# - fix server build
+#
+%bcond_with	server		# build with local server
 #
 
 # there is no ghc on ppc
@@ -11,12 +14,12 @@ Summary:	hedgewars - free Worms-like turn based strategy game
 Summary(hu.UTF-8):	hedgewars - ingyenes Worms-szerű körökre osztott stratégiai játék
 Summary(pl.UTF-8):	hedgewars - strategia czasu rzeczywistego podobna do Worms
 Name:		hedgewars
-Version:	0.9.7
+Version:	0.9.9
 Release:	1
 License:	GPL v2 + Public Domain fonts
 Group:		X11/Applications/Games
 Source0:	http://hedgewars.org/download/%{name}-src-%{version}.tar.bz2
-# Source0-md5:	2326823d2827fb08885dd3944e8692ac
+# Source0-md5:	5f76525345ead28ee1d04c1ae258395e
 Source1:	%{name}.png
 Source2:	%{name}.desktop
 URL:		http://www.hedgewars.org/
