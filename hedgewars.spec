@@ -14,12 +14,12 @@ Summary:	hedgewars - free Worms-like turn based strategy game
 Summary(hu.UTF-8):	hedgewars - ingyenes Worms-szerű körökre osztott stratégiai játék
 Summary(pl.UTF-8):	hedgewars - strategia czasu rzeczywistego podobna do Worms
 Name:		hedgewars
-Version:	0.9.10
+Version:	0.9.11
 Release:	1
 License:	GPL v2 + Public Domain fonts
 Group:		X11/Applications/Games
 Source0:	http://hedgewars.org/download/%{name}-src-%{version}.tar.bz2
-# Source0-md5:	2ac235a6df8e50591598e5521d0deb99
+# Source0-md5:	8e0accc23e137ce5dbe6d50b5b8ba2ef
 Source1:	%{name}.png
 Source2:	%{name}.desktop
 URL:		http://www.hedgewars.org/
