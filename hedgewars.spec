@@ -1,6 +1,6 @@
 #
 # TODO:
-# - fix server build
+# - fix server build (it requires dataenc package from HackageDB - http://hackage.haskell.org/package/dataenc) 
 #
 %bcond_with	server		# build with local server
 #
@@ -29,7 +29,7 @@ BuildRequires:	SDL_image-devel >= 1.2
 BuildRequires:	SDL_mixer-devel >= 1.2
 BuildRequires:	SDL_net-devel >= 1.2.5
 BuildRequires:	SDL_ttf-devel >= 2.0
-BuildRequires:	cmake >= 2.4.4
+BuildRequires:	cmake >= 2.6.0
 BuildRequires:	desktop-file-utils
 BuildRequires:	fpc >= 2.2.0
 %{?with_server:BuildRequires:	ghc}
