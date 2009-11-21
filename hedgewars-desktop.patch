@@ -1,0 +1,20 @@
+--- hedgewars-src-0.9.12/misc/hedgewars.desktop~	2009-10-18 18:55:35.000000000 +0200
++++ hedgewars-src-0.9.12/misc/hedgewars.desktop	2009-11-22 00:15:05.000000000 +0100
+@@ -1,13 +1,13 @@
+ [Desktop Entry]
+ Type=Application
+-Version=1.0
+-Encoding=UTF-8
+ Name=Hedgewars
+ GenericName=Fighting Hedgehogs
++GenericName=Walczące Jeże
+ GenericName[tr]=Worms Benzeri Strateji Oyunu
+ GenericName[ru]=Битвы ежей
+-Icon=hedgewars.png
++Icon=hedgewars
+ Exec=hedgewars
+ Terminal=false
+ StartupNotify=false
+-Categories=Application;Game;StrategyGame;
++Categories=Game;StrategyGame;
++# vi: encoding=utf-8
