@@ -1,6 +1,6 @@
 #
 # TODO:
-# - fix server build (it requires dataenc package from HackageDB - http://hackage.haskell.org/package/dataenc) 
+# - fix server build (it requires dataenc package from HackageDB - http://hackage.haskell.org/package/dataenc)
 #
 %bcond_with	server		# build with local server
 #
