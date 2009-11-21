@@ -35,6 +35,7 @@ BuildRequires:	fpc >= 2.2.0
 %{?with_server:BuildRequires:	ghc}
 %{?with_server:BuildRequires:	gmp-devel}
 BuildRequires:	openssl-devel
+BuildRequires:	qt4-build
 BuildRequires:	qt4-qmake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
