@@ -14,12 +14,12 @@ Summary:	hedgewars - free Worms-like turn based strategy game
 Summary(hu.UTF-8):	hedgewars - ingyenes Worms-szerű körökre osztott stratégiai játék
 Summary(pl.UTF-8):	hedgewars - strategia czasu rzeczywistego podobna do Worms
 Name:		hedgewars
-Version:	0.9.12
+Version:	0.9.13
 Release:	1
 License:	GPL v2 + Public Domain fonts
 Group:		X11/Applications/Games
 Source0:	http://hedgewars.org/download/%{name}-src-%{version}.tar.bz2
-# Source0-md5:	10e9815d19df066b5df074fc2cd08c26
+# Source0-md5:	b91de13d54670970568b56f150cf9fe4
 Patch0:		%{name}-desktop.patch
 URL:		http://www.hedgewars.org/
 BuildRequires:	QtCore-devel >= 4.4.0
@@ -34,6 +34,7 @@ BuildRequires:	desktop-file-utils
 BuildRequires:	fpc >= 2.2.0
 %{?with_server:BuildRequires:	ghc}
 %{?with_server:BuildRequires:	gmp-devel}
+BuildRequires:	lua51-devel
 BuildRequires:	openssl-devel
 BuildRequires:	qt4-build
 BuildRequires:	qt4-qmake
@@ -63,14 +64,12 @@ Serwer do prowadzenia sieciowych gier hedgewars.
 %prep
 %setup -q -n %{name}-src-%{version}
 %patch0 -p1
-mkdir build
 
 %build
-cd build
 %cmake \
 	-DCMAKE_INSTALL_PREFIX=%{_usr} \
 	%{?with_server:-DWITH_SERVER=1} \
-	..
+	.
 %{__make}
 
 %install
@@ -78,7 +77,7 @@ rm -rf $RPM_BUILD_ROOT
 
 install -d $RPM_BUILD_ROOT{%{_pixmapsdir},%{_desktopdir}}
 
-%{__make} -C build install \
+%{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
 install misc/hedgewars.desktop $RPM_BUILD_ROOT%{_desktopdir}
