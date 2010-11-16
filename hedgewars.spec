@@ -14,12 +14,12 @@ Summary:	hedgewars - free Worms-like turn based strategy game
 Summary(hu.UTF-8):	hedgewars - ingyenes Worms-szerű körökre osztott stratégiai játék
 Summary(pl.UTF-8):	hedgewars - strategia czasu rzeczywistego podobna do Worms
 Name:		hedgewars
-Version:	0.9.13
+Version:	0.9.14.1
 Release:	1
 License:	GPL v2 + Public Domain fonts
 Group:		X11/Applications/Games
 Source0:	http://hedgewars.org/download/%{name}-src-%{version}.tar.bz2
-# Source0-md5:	b91de13d54670970568b56f150cf9fe4
+# Source0-md5:	91f47c8d71ff232d17060880cc22477d
 Patch0:		%{name}-desktop.patch
 URL:		http://www.hedgewars.org/
 BuildRequires:	QtCore-devel >= 4.4.0
@@ -38,6 +38,7 @@ BuildRequires:	lua51-devel
 BuildRequires:	openssl-devel
 BuildRequires:	qt4-build
 BuildRequires:	qt4-qmake
+BuildRequires:	rpmbuild(macros) >= 1.577
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -67,7 +68,6 @@ Serwer do prowadzenia sieciowych gier hedgewars.
 
 %build
 %cmake \
-	-DCMAKE_INSTALL_PREFIX=%{_usr} \
 	%{?with_server:-DWITH_SERVER=1} \
 	.
 %{__make}
