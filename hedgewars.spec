@@ -1,8 +1,5 @@
 #
-# TODO:
-# - fix server build (it requires dataenc package from HackageDB - http://hackage.haskell.org/package/dataenc)
-#
-%bcond_with	server		# build with local server
+%bcond_without	server		# build with local server
 #
 
 # there is no ghc on ppc
@@ -15,7 +12,7 @@ Summary(hu.UTF-8):	hedgewars - ingyenes Worms-szerű körökre osztott stratégi
 Summary(pl.UTF-8):	hedgewars - strategia czasu rzeczywistego podobna do Worms
 Name:		hedgewars
 Version:	0.9.15
-Release:	1
+Release:	2
 License:	GPL v2 + Public Domain fonts
 Group:		X11/Applications/Games
 Source0:	http://hedgewars.org/download/%{name}-src-%{version}.tar.bz2
@@ -33,6 +30,9 @@ BuildRequires:	cmake >= 2.6.0
 BuildRequires:	desktop-file-utils
 BuildRequires:	fpc >= 2.2.0
 %{?with_server:BuildRequires:	ghc}
+%{?with_server:BuildRequires:	ghc-dataenc}
+%{?with_server:BuildRequires:	ghc-hslogger}
+%{?with_server:BuildRequires:	ghc-utf8-string}
 %{?with_server:BuildRequires:	gmp-devel}
 BuildRequires:	lua51-devel
 BuildRequires:	openssl-devel
