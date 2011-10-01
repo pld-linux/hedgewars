@@ -1,5 +1,5 @@
---- hedgewars-src-0.9.14.1/misc/hedgewars.desktop~	2010-11-14 19:17:01.000000000 +0100
-+++ hedgewars-src-0.9.14.1/misc/hedgewars.desktop	2010-11-16 11:29:06.756836667 +0100
+--- hedgewars-src-0.9.16/misc/hedgewars.desktop.orig	2011-09-17 20:42:55.000000000 +0200
++++ hedgewars-src-0.9.16/misc/hedgewars.desktop	2011-10-01 21:00:55.000000000 +0200
 @@ -1,7 +1,5 @@
  [Desktop Entry]
  Type=Application
@@ -8,10 +8,10 @@
  Name=Hedgewars
  GenericName=Fighting Hedgehogs
  GenericName[de]=Kämpfende Igel
-@@ -12,8 +10,9 @@
- GenericName[es]=Batallas entre erizos
- GenericName[it]=Ricci combattenti
- GenericName[pt]=Batalhas entre ouriços
+@@ -16,8 +14,9 @@
+ GenericName[sk]=Bojujúci ježkovia
+ GenericName[cs]=Bojující ježci
+ GenericName[sv]=Stridande igelkottar
 -Icon=hedgewars.png
 +Icon=hedgewars
  Exec=hedgewars

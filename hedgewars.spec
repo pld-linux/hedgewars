@@ -11,12 +11,12 @@ Summary:	hedgewars - free Worms-like turn based strategy game
 Summary(hu.UTF-8):	hedgewars - ingyenes Worms-szerű körökre osztott stratégiai játék
 Summary(pl.UTF-8):	hedgewars - strategia czasu rzeczywistego podobna do Worms
 Name:		hedgewars
-Version:	0.9.15
-Release:	2
+Version:	0.9.16
+Release:	1
 License:	GPL v2 + Public Domain fonts
 Group:		X11/Applications/Games
-Source0:	http://hedgewars.org/download/%{name}-src-%{version}.tar.bz2
-# Source0-md5:	bf600e32d709d7258d4f249dd98e2cdb
+Source0:	http://download.gna.org/hedgewars/hedgewars-src-%{version}.tar.bz2
+# Source0-md5:	04f28f454e370a101cbf0d82c6d39bce
 Patch0:		%{name}-desktop.patch
 URL:		http://www.hedgewars.org/
 BuildRequires:	QtCore-devel >= 4.4.0
@@ -26,7 +26,7 @@ BuildRequires:	SDL_image-devel >= 1.2
 BuildRequires:	SDL_mixer-devel >= 1.2
 BuildRequires:	SDL_net-devel >= 1.2.5
 BuildRequires:	SDL_ttf-devel >= 2.0
-BuildRequires:	cmake >= 2.6.0
+BuildRequires:	cmake >= 2.8.0
 BuildRequires:	desktop-file-utils
 BuildRequires:	fpc >= 2.2.0
 %{?with_server:BuildRequires:	ghc}
@@ -37,6 +37,7 @@ BuildRequires:	fpc >= 2.2.0
 BuildRequires:	lua51-devel
 BuildRequires:	openssl-devel
 BuildRequires:	qt4-build
+BuildRequires:	qt4-linguist
 BuildRequires:	qt4-qmake
 BuildRequires:	rpmbuild(macros) >= 1.577
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
