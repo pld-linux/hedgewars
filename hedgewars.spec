@@ -32,7 +32,7 @@ BuildRequires:	fpc >= 2.2.0
 %{?with_server:BuildRequires:	ghc}
 %{?with_server:BuildRequires:	ghc-dataenc}
 %{?with_server:BuildRequires:	ghc-hslogger}
-%{?with_server:BuildRequires:	ghc-utf8-string}
+%{?with_server:BuildRequires:	ghc-bytestring-show}
 %{?with_server:BuildRequires:	gmp-devel}
 BuildRequires:	lua51-devel
 BuildRequires:	openssl-devel
@@ -40,6 +40,7 @@ BuildRequires:	qt4-build
 BuildRequires:	qt4-linguist
 BuildRequires:	qt4-qmake
 BuildRequires:	rpmbuild(macros) >= 1.577
+BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -70,6 +71,7 @@ Serwer do prowadzenia sieciowych gier hedgewars.
 %build
 %cmake \
 	%{?with_server:-DWITH_SERVER=1} \
+	-DCMAKE_EXE_LINKER_FLAGS="-lz" \
 	.
 %{__make}
 
