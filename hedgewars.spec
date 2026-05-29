@@ -6,7 +6,7 @@ Summary(hu.UTF-8):	hedgewars - ingyenes Worms-szerű körökre osztott stratégi
 Summary(pl.UTF-8):	hedgewars - strategia czasu rzeczywistego podobna do Worms
 Name:		hedgewars
 Version:	1.0.3
-Release:	0.1
+Release:	1
 License:	GPL v2 + Public Domain fonts
 Group:		X11/Applications/Games
 Source0:	https://www.hedgewars.org/download/releases/%{name}-src-%{version}.tar.bz2
