@@ -1,0 +1,32 @@
+--- hedgewars-src-1.0.3/project_files/hwc/rtl/GL.h.orig	2021-06-23 20:58:10.000000000 +0200
++++ hedgewars-src-1.0.3/project_files/hwc/rtl/GL.h	2026-05-31 22:53:44.401433856 +0200
+@@ -3,6 +3,7 @@
+ #if defined(__APPLE__) && !defined(EMSCRIPTEN)
+ #include <OpenGL/gl.h>
+ #else
++#include "GL/glew.h"
+ #include "GL/gl.h"
+ #endif
+ 
+--- hedgewars-src-1.0.3/project_files/hwc/CMakeLists.txt~	2025-07-22 19:12:55.000000000 +0200
++++ hedgewars-src-1.0.3/project_files/hwc/CMakeLists.txt	2026-06-07 10:22:51.304887592 +0200
+@@ -111,6 +111,7 @@
+ target_link_libraries(hwengine  fpcrtl
+                                 ${LUA_LIBRARY}
+                                 ${OPENGL_LIBRARY}
++                                ${GLEW_LIBRARIES}
+                                 ${SDL2_LIBRARIES}
+                                 ${SDL2_MIXER_LIBRARIES}
+                                 ${SDL2_NET_LIBRARIES}
+--- hedgewars-src-1.0.3/CMakeLists.txt~	2025-07-28 19:35:46.000000000 +0200
++++ hedgewars-src-1.0.3/CMakeLists.txt	2026-06-07 10:25:18.395536517 +0200
+@@ -219,6 +219,9 @@
+     add_subdirectory(misc/liblua)
+ endif()
+ 
++include(FindPkgConfig)
++find_package(PkgConfig REQUIRED)
++pkg_check_modules(GLEW REQUIRED glew)
+ 
+ #physfs discovery
+ if(NOT PHYSFS_LIBRARY OR NOT PHYSFS_INCLUDE_DIR)
