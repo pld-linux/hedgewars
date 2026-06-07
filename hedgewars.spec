@@ -11,18 +11,25 @@ License:	GPL v2 + Public Domain fonts
 Group:		X11/Applications/Games
 Source0:	https://www.hedgewars.org/download/releases/%{name}-src-%{version}.tar.bz2
 # Source0-md5:	9eaad10355c4ad63e42a292efcc7fd4e
+Patch0:		glew.patch
+Patch1:		clang15.patch
 URL:		https://www.hedgewars.org/
 BuildRequires:	Qt5Core-devel
 BuildRequires:	Qt5Gui-devel
+BuildRequires:	Qt5OpenGL-devel
 BuildRequires:	Qt5Network-devel
 BuildRequires:	Qt5Widgets-devel
 BuildRequires:	SDL2_image-devel >= 2.0
 BuildRequires:	SDL2_mixer-devel >= 2.0
 BuildRequires:	SDL2_net-devel >= 2.0
 BuildRequires:	SDL2_ttf-devel >= 2.0
+BuildRequires:	clang
 BuildRequires:	cmake >= 2.8.0
 BuildRequires:	desktop-file-utils
-BuildRequires:	fpc >= 2.2.0
+# -DNOSERVER=OFF
+#BuildRequires:	ghc
+#BuildRequires:	ghc-network
+#BuildRequires:	ghc-vector
 BuildRequires:	libpng-devel
 BuildRequires:	lua51-devel
 BuildRequires:	openssl-devel
@@ -37,6 +44,7 @@ Requires(post,postun):	desktop-file-utils
 Requires(post,postun):	gtk-update-icon-cache
 Requires:	hicolor-icon-theme
 
+%define	filterout -fvar-tracking-assignments
 
 %description
 Hedgewars is a free Worms-like turn based strategy game.
@@ -48,23 +56,17 @@ Hedgewars egy ingyenes Worms-szerű körökre osztott stratégiai játék.
 Hedgewars jest wolnodostępną strategią czasu rzeczywistego podobną do
 Worms.
 
-%post
-%update_icon_cache hicolor
-%update_desktop_database_post
-
-%postun
-%update_icon_cache hicolor
-%update_desktop_database_postun
-
 %prep
 %setup -q -n %{name}-src-%{version}
+%patch -P0 -p1
+%patch -P1 -p1
 
 %build
-mkdir build
+mkdir -p build
 cd build
 %cmake \
 	-DNOSERVER=ON \
-	-DNOVIDEOREC=ON \
+	-DBUILD_ENGINE_C=ON \
 	-DCMAKE_BUILD_TYPE=RelWithDebInfo \
 	..
 
@@ -81,6 +83,14 @@ cp -p ../misc/hedgewars.png $RPM_BUILD_ROOT%{_pixmapsdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%post
+%update_icon_cache hicolor
+%update_desktop_database_post
+
+%postun
+%update_icon_cache hicolor
+%update_desktop_database_postun
 
 %files
 %defattr(644,root,root,755)
