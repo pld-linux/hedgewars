@@ -27,7 +27,7 @@ BuildRequires:	clang
 BuildRequires:	cmake >= 2.8.0
 BuildRequires:	desktop-file-utils
 # -DNOSERVER=OFF
-#BuildRequires:	ghc
+BuildRequires:	ghc
 #BuildRequires:	ghc-network
 #BuildRequires:	ghc-vector
 BuildRequires:	libpng-devel
