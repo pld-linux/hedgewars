@@ -1,12 +1,9 @@
-#
-# Server requires some haskel components that are not available in PLD
-
 Summary:	hedgewars - free Worms-like turn based strategy game
 Summary(hu.UTF-8):	hedgewars - ingyenes Worms-szerű körökre osztott stratégiai játék
 Summary(pl.UTF-8):	hedgewars - strategia czasu rzeczywistego podobna do Worms
 Name:		hedgewars
 Version:	1.0.3
-Release:	3
+Release:	4
 License:	GPL v2 + Public Domain fonts
 Group:		X11/Applications/Games
 Source0:	https://www.hedgewars.org/download/releases/%{name}-src-%{version}.tar.bz2
@@ -26,10 +23,7 @@ BuildRequires:	SDL2_ttf-devel >= 2.0
 BuildRequires:	clang
 BuildRequires:	cmake >= 2.8.0
 BuildRequires:	desktop-file-utils
-# -DNOSERVER=OFF
 BuildRequires:	ghc
-#BuildRequires:	ghc-network
-#BuildRequires:	ghc-vector
 BuildRequires:	libpng-devel
 BuildRequires:	lua51-devel
 BuildRequires:	openssl-devel
